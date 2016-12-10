@@ -18,7 +18,7 @@ credencial <- OAuthFactory$new(consumerKey=cons_key,
 
 credencial$handshake()
 
-save(cred, file = "TTOauth.Rdata")
+save(credencial, file = "TTOauth.Rdata")
 system("touch acoes_petrobras_dados.json")
 
 filterStream(file.name = "acoes_petrobras_dados.json", 
