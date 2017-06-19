@@ -1,0 +1,1 @@
+https://docs.microsoft.com/pt-br/azure/machine-learning/machine-learning-r-csharp-lexicon-based-sentiment-analysis
