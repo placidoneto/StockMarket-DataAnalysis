@@ -1,4 +1,4 @@
-path <- "C:\\Users\\Yuri\\Desktop\\datamy"
+path <- "C:\\Users\\Yuri\\Desktop\\StockMarket-DataAnalysis\\yuri\\R scripts"
 setwd(path)
 
 
