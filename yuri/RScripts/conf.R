@@ -10,7 +10,8 @@ baixarDependencias <- function(){
                     "tidyverse", 
                     "lubridate",
                     "RPostgreSQL",
-                    "xlsx")
+                    "xlsx",
+                    "rJava")
   
   novas_dependencias <- dependencias[!(dependencias %in% installed.packages()[,"Package"])]
   

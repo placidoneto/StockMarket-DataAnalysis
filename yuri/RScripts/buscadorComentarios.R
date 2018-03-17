@@ -12,12 +12,12 @@
   
  }
  
- exportarParaXlsx <- function(comentarios, posts)
+ exportarParaXlsx <- function(comentarios, caminhoJRE)
  {
+   Sys.setenv(JAVA_HOME=caminhoJRE)
    require(xlsx)
    
-   write.xlsx(comentarios, paste(getwd(), "excel/comentarios.xlsx", sep = ""))
-   write.xlsx(posts, paste(getwd(), "excel/posts.xlsx", sep = ""))
+   write.xlsx(comentarios, paste(getwd(), "/comentarios.xlsx", sep = ""))
    
  }
  
