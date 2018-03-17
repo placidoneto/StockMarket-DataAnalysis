@@ -1,7 +1,16 @@
 
 baixarDependencias <- function(){
   
-  dependencias <- c("streamR", "tidytext", "dplyr", "Rfacebook", "stringr", "ggplot2", "tidyverse", "lubridate")
+  dependencias <- c("streamR", 
+                    "tidytext", 
+                    "dplyr", 
+                    "Rfacebook", 
+                    "stringr", 
+                    "ggplot2", 
+                    "tidyverse", 
+                    "lubridate",
+                    "RPostgreSQL",
+                    "xlsx")
   
   novas_dependencias <- dependencias[!(dependencias %in% installed.packages()[,"Package"])]
   

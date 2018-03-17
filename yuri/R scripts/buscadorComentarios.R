@@ -10,11 +10,21 @@
   
   return(comments)
   
-}
+ }
+ 
+ exportarParaXlsx <- function(comentarios, posts)
+ {
+   require(xlsx)
+   
+   write.xlsx(comentarios, paste(getwd(), "excel/comentarios.xlsx", sep = ""))
+   write.xlsx(posts, paste(getwd(), "excel/posts.xlsx", sep = ""))
+   
+ }
+ 
  # # install.packages("Rfacebook", dependencies = T)
 # # install.packages("xlsx", dependencies = T)
 # require(Rfacebook)
-# require(xlsx)
+# 
 # 
 # token <- ""
 # pages <- c("OiOficial",

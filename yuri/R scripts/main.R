@@ -4,7 +4,7 @@ setwd(path)
 source(file = 'conf.R')
 source(file = 'Dicionario/traducao_pct_sentimentos.R')
 source(file = 'analise_sentimental.R')
-source(file = 'pds_posts_comments.R')
+source(file = 'buscadorComentarios.R')
 
 baixarDependencias()
 importarDependencias()
@@ -15,22 +15,16 @@ arrayDePaginas <- c("SKYBrasil", "CarrefourBR")
 
 comentarios_post <- get_fb_dataset(token, arrayDePaginas)
                                    
-
 dicionario <- get_compare_lexical_table()
-comentarios_avaliados <- avaliar_comentarios(comentarios_post, dicionario)
-novo <- avaliar_comentarios(comentarios_post, dicionario)
 
+comentarios_avaliados <- avaliar_comentarios(comentarios_post, dicionario)
 
 
 length(which(comentarios_avaliados$avaliacao == "positive"))
-length(which(novo$avaliacao == "positive"))
-
 
 length(which(comentarios_avaliados$avaliacao == "negative"))
-length(which(novo$avaliacao == "negative"))
 
 length(which(comentarios_avaliados$avaliacao == "neutral"))
-length(which(novo$avaliacao == "neutral"))
 
-plot_sentiments(novo)
+plot_sentiments(comentarios_avaliados)
 
