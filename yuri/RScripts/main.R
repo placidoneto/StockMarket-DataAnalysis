@@ -13,8 +13,8 @@ definirLocale()
 # Link para obter token do Facebook: https://developers.facebook.com/tools/explorer/
 # Exemplo de caminho do JRE: C:/Program Files/Java/jre1.8.0_161
 
-token <- "EAACEdEose0cBAET0ifZAg8mPFg7rfgs4BxH77KPKkesia5fJnsGMag7KV7pS2vm5xpjGZAuxQxNApsJnEimMofmi70LLwIB19le3pLbZBfC90JqKiFDLB93l3W5mFWwQ1rUOM1yBZBSHWvKlZAgL7GZCL0uALDiZCNNz1UEzkTDHxA3alVuGVlHdbttLZAk8mGvZC1E19RfZCZA8wZDZD"
-caminhoJRE = "C:/Program Files/Java/jre1.8.0_161"
+token <- ""
+caminhoJRE = ""
 arrayDePaginas <- c("SKYBrasil", "CarrefourBR")
 
 comentarios_post <- get_fb_dataset(token, arrayDePaginas)
