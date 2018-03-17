@@ -1,18 +1,17 @@
- get_fb_dataset <- function(){
+ get_fb_dataset <- function(token, arrayDePaginas){
   require(Rfacebook)
   
-  token <- "EAACEdEose0cBAGwjmjEc8mgT0wdmDbRCXHJTbVm4tZB6rZBI9eS5fZCcIRmPFpqfdhZAqGMIDo4PK2V1MNuhpO8VYYk1ou15xDrgsq3ZCSDucHgNLdZBqxTU1yEVFHFHPv1Qn6WPH1NKLFYLZBZCYJ9HCFOfltOceLxHSXOdliqPuni7hDm4jWNjYZCEXSwERyOkZD"
-  pages <- c("SKYBrasil", "UniversalPicturesBR")
+  token <- token
+  pages <- arrayDePaginas
   
-  posts <- getPage(pages[2], token = token, n = 1, reactions = T)
-  comments <- getPost(posts$id[1], token = token, n = 20)
+  posts <- getPage(arrayDePaginas[2], token = token, n = 10, reactions = T, api = "v2.8")
+  comments <- getPost(posts$id[1], token = token, n.comments = 10, api = "v2.8")
   comments <- as.data.frame(comments, stringsAsFactors = F)
   
   return(comments)
   
 }
-
-# # install.packages("Rfacebook", dependencies = T)
+ # # install.packages("Rfacebook", dependencies = T)
 # # install.packages("xlsx", dependencies = T)
 # require(Rfacebook)
 # require(xlsx)

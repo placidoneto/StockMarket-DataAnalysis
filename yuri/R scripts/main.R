@@ -1,17 +1,25 @@
-path <- "C:\\Users\\Yuri\\Desktop\\StockMarket-DataAnalysis\\yuri\\R scripts"
+path <- getwd()
 setwd(path)
 
-
+source(file = 'conf.R')
 source(file = 'Dicionario/traducao_pct_sentimentos.R')
 source(file = 'analise_sentimental.R')
 source(file = 'pds_posts_comments.R')
 
+baixarDependencias()
+importarDependencias()
+definirLocale()
 
-comentarios_post <- get_fb_dataset()
+token <- ""
+arrayDePaginas <- c("SKYBrasil", "CarrefourBR")
+
+comentarios_post <- get_fb_dataset(token, arrayDePaginas)
+                                   
+
 dicionario <- get_compare_lexical_table()
 comentarios_avaliados <- avaliar_comentarios(comentarios_post, dicionario)
-novo <- avaliar_comentarios(universal, dicionario)
-universal <- get_fb_dataset()
+novo <- avaliar_comentarios(comentarios_post, dicionario)
+
 
 
 length(which(comentarios_avaliados$avaliacao == "positive"))
