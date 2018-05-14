@@ -23,6 +23,8 @@ tokenize_message <- function(dataset){
       text_low <- stringr::str_to_lower(text_without_controlChar)
       text_without_digit <- gsub(pattern = "[[:digit:]]","",text_low)
       tokenize <- str_split(text_without_digit,"[[:space:]]")
+      tokenize <- gsub(pattern = stopwords::stopwords(language = 'pt'),"",tokenize)
+      
       only_words <- unlist(tokenize)
       only_words_df <- as.data.frame(only_words, stringsAsFactors = F)
       names(only_words_df) <- "word"
